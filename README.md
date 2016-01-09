@@ -24,9 +24,9 @@ Install and create a home controller:
 
 Add this to your routes.rb file:
   
- 		Brochure::HomeContent.templates.each do |pg|
-    	get "/#{pg}" => "home##{pg}", :as => pg.gsub(/(\/|-)/,'_').to_sym
-  	end
+		Brochure::HomeContent.templates.each do |pg|
+			get "/#{pg}" => "home##{pg}", :as => pg.gsub(/(\/|-)/,'_').to_sym
+		end
 
 
 Usage
@@ -39,8 +39,8 @@ Write your static pages and put them in the RAILS_ROOT/app/views/home directory.
     
 After putting something there, a named route is created and you can link to it from anywhere in your app with:
 
-        link_to "About", about_url
-        link_to "About", about_path
+    link_to "About", about_url
+    link_to "About", about_path
         
 You can also create content in sub directories like this:
     
