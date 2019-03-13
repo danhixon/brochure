@@ -14,19 +14,19 @@ Rails 4 required.
 
 Include in your Gemfile:
 
-    gem "brochure", :git => 'git://github.com/danhixon/brochure.git'
+  gem "brochure", :git => 'git://github.com/danhixon/brochure.git'
 
 Install and create a home controller:
 
-    $ bundle install
+  $ bundle install
 
-    $ rails generate controller home
+  $ rails generate controller home
 
-Add this to your routes.rb file:
+Add the following to your routes.rb file wherever it is appropriate (i.e. above possibly conflicting vanity routes):
   
-		Brochure::HomeContent.templates.each do |pg|
-			get "/#{pg}" => "home##{pg}", :as => pg.gsub(/(\/|-)/,'_').to_sym
-		end
+	Brochure::HomeContent.templates.each do |pg|
+		get "/#{pg}" => "home##{pg}", :as => pg.gsub(/(\/|-)/,'_').to_sym
+	end
 
 
 Usage
